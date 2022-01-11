@@ -159,7 +159,7 @@ local b = w:CreateFolder("°°°°°°°°°°°°°°°°°°°°°°°°°°°
 b:Toggle("Caught",function(bool)
     farmfish == bool
 if farmfish == true then
-wait(1.2)
+wait(2)
 bite()
 caught()
 end
