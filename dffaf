@@ -95,9 +95,9 @@ folder:AddToggle({text = "Autofarm", callback = function(value)
                         local args = {[1] = {["inputType"] = Enum.UserInputType.MouseButton1,["keyCode"] = Enum.KeyCode.Unknown}}
                         game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(args))
                         if not game:GetService("Workspace").Food:FindFirstChildWhichIsA("Part") or not game:GetService("Workspace").Food:FindFirstChildWhichIsA("MeshPart") and getgenv().AutoEat then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame - Vector3.new(0,getgenv().DIS,0)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame - (v.HumanoidRootPart.CFrame.lookVector * getgenv().DIS)
                         elseif not getgenv().Eat then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame - Vector3.new(0,getgenv().DIS,0)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame - (v.HumanoidRootPart.CFrame.lookVector * getgenv().DIS)
                         end
                         until v.Humanoid.Health <= 0 or not getgenv().Autofarm
                     end;
